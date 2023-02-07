@@ -7,6 +7,8 @@
     "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start -p 3001",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "stylelint:fix": "stylelint --fix **/*.scss",
     "eslint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --fix",
     "lint": "npm run eslint && npm run stylelint",
@@ -39,6 +41,7 @@
     "@fortawesome/react-fontawesome": "0.2.0",
     "@mui/material": "^5.8.4",
     "@next/bundle-analyzer": "^13.1.6",
+    "gh-pages": "^5.0.0",
     "stylelint": "^14.5.1",
     "stylelint-config-standard-scss": "^3.0.0"
   }
