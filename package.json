@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start -p 3001",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d .next",
     "stylelint:fix": "stylelint --fix **/*.scss",
     "eslint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --fix",
     "lint": "npm run eslint && npm run stylelint",
