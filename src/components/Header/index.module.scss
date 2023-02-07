@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  flex-flow: nowrap;
+  flex-direction: column;
+  margin-top: var(--spacing-6);
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: var(--spacing-4);
+
+  @media (max-width: 768px) {
+    margin-top: var(--spacing-5);
+  }
+
+  .titles {
+    align-content: center;
+    direction: column;
+    text-align: center;
+  }
+
+  .searchContainer {
+    display: flex;
+    max-width: 500px;
+    padding-inline: 16px;
+    justify-content: center;
+  }
+
+  .error {
+    font-size: var(--caption);
+    margin-left: 10px;
+    margin-top: 3px;
+    text-align: left;
+    width: 100%;
+  }
+}

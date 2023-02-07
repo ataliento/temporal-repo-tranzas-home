@@ -1,0 +1,19 @@
+.container {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  max-width: 384px;
+  height: 200px;
+  box-shadow: var(--bs-primary);
+  border-radius: var(--border-radius-medium);
+  background-color: var(--background-card);
+  cursor: pointer;
+
+  @media only screen and (max-width: "577px") {
+    border-radius: var(--border-radius-small);
+  }
+}
