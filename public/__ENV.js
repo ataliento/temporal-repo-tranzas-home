@@ -1,0 +1,1 @@
+if(window.__ENV){ Object.assign(window.__ENV, {"NEXT_PUBLIC_MFE_ANDREANI":"transaccional-home@http://localhost:3005/_next/static/chunks/remoteEntry.js","REACT_ENV_PREFIX":"NEXT_PUBLIC"}); } else { window.__ENV = {"NEXT_PUBLIC_MFE_ANDREANI":"transaccional-home@http://localhost:3005/_next/static/chunks/remoteEntry.js","REACT_ENV_PREFIX":"NEXT_PUBLIC"}; }

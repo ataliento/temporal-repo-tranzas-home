@@ -1,8 +1,8 @@
 import { ErrorBoundary, StyleSystemProvider } from "@architecture-it/stylesystem";
 import { CssBaseline } from "@mui/material";
-import type { AppProps } from "next/app";
+import App, { type AppProps } from "next/app";
 
-export default function App({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
     <StyleSystemProvider>
       <CssBaseline />
@@ -12,3 +12,10 @@ export default function App({ Component, pageProps }: AppProps) {
     </StyleSystemProvider>
   );
 }
+
+MyApp.getInitialProps = async (ctx: any) => {
+  const appProps: any = await App.getInitialProps(ctx);
+
+  return appProps;
+};
+export default MyApp;

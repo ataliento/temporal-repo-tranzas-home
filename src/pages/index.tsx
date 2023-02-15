@@ -2,17 +2,19 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Grid from "@mui/material/Grid";
+import { NextPageContext } from "next";
 
 const Header = dynamic(() => import("../components/Header"), { ssr: false });
 const PrincipalAction = dynamic(() => import("../components/PrincipalAction"), { ssr: false });
 
 let NOMBRE = "Test";
 
-export function Index() {
+const Home = () => {
   const { push } = useRouter();
 
   return (
     <Grid container direction="column" gap="var(--spacing-4)" width="100%">
+      <button onClick={() => push("/test")}>to test</button>
       <Header subtitle="¿Qué vas a hacer hoy?" title={`¡Hola, ${NOMBRE}!`} />
       <Grid
         container
@@ -47,5 +49,11 @@ export function Index() {
       </Grid>
     </Grid>
   );
-}
-export default Index;
+};
+
+//
+Home.getInitialProps = async (_ctx: NextPageContext) => {
+  return {};
+};
+
+export default Home;

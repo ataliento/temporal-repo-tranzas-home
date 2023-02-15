@@ -7,5 +7,10 @@
     "css.validate": false,
     "less.validate": false,
     "scss.validate": false,
-    "stylelint.validate": ["scss"]
+    "stylelint.validate": ["scss"],
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#3e2680",
+        "titleBar.activeBackground": "#3a22a5",
+        "titleBar.activeForeground": "#FDF9FC"
+      },
 }

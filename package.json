@@ -4,7 +4,8 @@
   "private": true,
   "main": "./src",
   "scripts": {
-    "dev": "next dev -p 3001",
+    "predev": "react-env --prefix NEXT_PUBLIC --",
+    "dev": "next dev -p 3005",
     "build": "next build",
     "start": "next start -p 3001",
     "stylelint:fix": "stylelint --fix **/*.scss",
@@ -15,7 +16,9 @@
     "docker:start": "docker run -p 3001:9000 --env-file ./.env tranzas-home"
   },
   "dependencies": {
-    "@module-federation/nextjs-mf": "6.0.5",
+    "@module-federation/nextjs-mf": "6.1.1",
+    "@module-federation/utilities": "1.3.0",
+    "@architecture-it/react-env": "^1.1.0",
     "@next/font": "13.1.6",
     "@types/node": "18.11.19",
     "@types/react": "18.0.27",
@@ -26,7 +29,9 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.58.0",
-    "typescript": "4.9.5"
+    "typescript": "4.9.5",
+    "lodash": "4.17.21",
+    "webpack": "5.72.1"
   },
   "devDependencies": {
     "@architecture-it/eslint-config-andreani": "1.2.0",
