@@ -1,6 +1,6 @@
 {
   "name": "tranzas-home",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "main": "./src",
   "scripts": {
@@ -21,9 +21,7 @@
     "eslint-config-next": "13.1.6",
     "next": "13.1.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sass": "^1.58.0",
-    "typescript": "4.9.5"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@architecture-it/eslint-config-andreani": "1.4.0",
@@ -34,12 +32,14 @@
     "@fortawesome/pro-regular-svg-icons": "^6.1.1",
     "@fortawesome/pro-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "0.2.0",
-    "@mui/material": "^5.8.4",
     "@next/bundle-analyzer": "^13.1.6",
+    "@mui/material": "^5.8.4",
+    "sass": "^1.58.0",
     "stylelint": "^14.5.1",
     "stylelint-config-standard-scss": "^3.0.0",
     "@types/node": "18.11.19",
     "@types/react": "18.0.27",
-    "@types/react-dom": "18.0.10"
+    "@types/react-dom": "18.0.10",
+    "typescript": "4.9.5"
   }
 }
