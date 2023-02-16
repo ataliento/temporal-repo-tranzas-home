@@ -3,17 +3,21 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Grid from "@mui/material/Grid";
 
+import type { IUser } from "@/types/auth";
+
 const Header = dynamic(() => import("../components/Header"), { ssr: false });
 const PrincipalAction = dynamic(() => import("../components/PrincipalAction"), { ssr: false });
 
-let NOMBRE = "Test";
+export interface IProps {
+  user: IUser;
+}
 
-export function Index() {
+export function Index({ user }: IProps) {
   const { push } = useRouter();
 
   return (
     <Grid container direction="column" gap="var(--spacing-4)" width="100%">
-      <Header subtitle="¿Qué vas a hacer hoy?" title={`¡Hola, ${NOMBRE}!`} />
+      <Header subtitle="¿Qué vas a hacer hoy?" title={`¡Hola, ${user?.nombre}!`} />
       <Grid
         container
         item
@@ -48,4 +52,5 @@ export function Index() {
     </Grid>
   );
 }
+
 export default Index;

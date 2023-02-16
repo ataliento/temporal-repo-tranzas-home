@@ -16,13 +16,12 @@ module.exports = async (_phase, { _defaultConfig }) => {
     webpack: (config) => {
       config.plugins.push(
         new NextFederationPlugin({
-          name: "tranzas-home",
+          name: "remote",
           filename: "static/chunks/remoteEntry.js",
           remotes: {},
           extraOptions: {},
           exposes: {
             "./HomePage": "./src/pages/index",
-            "./useAuthHook": "./src/hooks/useAuth",
           },
           shared: {},
         })
