@@ -1,0 +1,19 @@
+.root {
+  width: 100%;
+}
+
+.skeleton {
+  width: 100%;
+  padding: var(--spacing-5);
+  max-width: 520px;
+}
+
+.skeletonCards {
+  justify-content: space-around;
+
+  @media only screen and (max-width: 768px) {
+    gap: 10px;
+    flex-wrap: nowrap;
+    padding: 0;
+  }
+}
