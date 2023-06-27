@@ -13,23 +13,28 @@ module.exports = async (_phase, { _defaultConfig }) => {
    */
   const nextConfig = {
     reactStrictMode: true,
-    webpack: (config) => {
+    webpack: (config, options) => {
+      const { isServer } = options;
+
       config.plugins.push(
         new NextFederationPlugin({
           name: "remote",
           filename: "static/chunks/remoteEntry.js",
-          remotes: {},
+          remotes: {
+            pymes: `pymes@http://localhost:3000/_next/static/${isServer ? "ssr" : "chunks"}/remoteEntry.js`
+          },
           extraOptions: {},
           exposes: {
             "./HomePage": "./src/pages/index",
+            "./HomeSkeleton": "./src/components/Skeleton/index",
           },
           shared: {},
         })
       );
       config.resolve.modules.push(path.resolve("./src"));
-
       return config;
     },
+    swcMinify: true,
     output: "standalone",
     images: {
       domains: ["componentesui.blob.core.windows.net"],
