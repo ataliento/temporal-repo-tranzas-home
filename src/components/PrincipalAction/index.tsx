@@ -1,30 +1,23 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
 import Image, { type ImageProps } from "next/image";
+import { Box, Typography } from "@mui/material";
 
-import styles from "./PrincipalAction.module.scss";
+import styles from "./index.module.scss";
 
 interface PrincipalActionProps {
   title: string;
   imageProps: ImageProps;
-  onClick?: () => void;
   id?: string;
+  onClick?: () => void;
 }
 
-const PrincipalAction = ({ title, imageProps, onClick, id }: PrincipalActionProps) => {
+const PrincipalAction = ({ id, title, imageProps, onClick }: PrincipalActionProps) => {
   return (
-    <Box className={styles.container} id={id} onClick={onClick}>
+    <Box className={styles.container} component="button" id={id} onClick={onClick}>
       <Box display="flex" height="100" justifyContent="center" sx={{ width: { xs: 65, sm: 100 } }}>
         <Image {...imageProps} alt={title} />
       </Box>
-      <Typography
-        className={styles.title}
-        color="var(--gray-800)"
-        sx={{
-          fontSize: { xs: "var(--caption)", sm: "var(--title-5)", md: "var(--title-4)" },
-        }}
-        variant="h1"
-      >
+      <Typography color="secondary" component="h1" variant="h1">
         {title}
       </Typography>
     </Box>

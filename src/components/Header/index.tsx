@@ -28,7 +28,10 @@ const Header = ({ title, subtitle }: HeaderProps) => {
 
   const handleOnClick = () => {
     if (REGEX.test(valueInput) && valueInput.length >= 9) {
-      window.open(`https://www.andreani.com/#!/informacionEnvio/${valueInput}`, "_blank");
+      window.open(
+        encodeURI(`https://www.andreani.com/#!/informacionEnvio/${valueInput}`),
+        "_blank"
+      );
       setError(null);
     } else if (valueInput.length < 9 || valueInput.length > 15) {
       setError("El número de seguimiento debe tener entre 9 y 15 caracteres.");
@@ -38,17 +41,17 @@ const Header = ({ title, subtitle }: HeaderProps) => {
   };
 
   return (
-    <Grid container className={styles.header}>
-      <Grid item className={styles.titles}>
+    <Grid container className={styles.root} component="section">
+      <Grid container item className={styles.text} direction="column">
         <Typography component="h1" variant="h3">
           {title}
         </Typography>
-
-        <Typography component="h2" variant="h4">
+        <Typography color="var(--gray-800)" component="h2" variant="h4">
           {subtitle}
         </Typography>
       </Grid>
-      <Grid container item className={styles.searchContainer} md={6}>
+
+      <Grid container item className={styles.searchContainer}>
         <Search
           fullWidth
           placeholder="Ingresá el número de seguimiento"
@@ -59,7 +62,11 @@ const Header = ({ title, subtitle }: HeaderProps) => {
           onChange={handleOnChange}
           onClick={handleOnClick}
         />
-        <Box className={styles.error}>{error && <span>{error}</span>}</Box>
+        {Boolean(error) && (
+          <Box className={styles.error}>
+            <span>{error}</span>
+          </Box>
+        )}
       </Grid>
     </Grid>
   );

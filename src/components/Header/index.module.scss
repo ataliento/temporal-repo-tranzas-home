@@ -1,28 +1,24 @@
-.header {
+.root {
   display: flex;
-  flex-flow: nowrap;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: var(--spacing-6);
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  gap: var(--spacing-4);
+  margin-bottom: 0 !important;
 
-  @media (max-width: 768px) {
-    margin-top: var(--spacing-5);
-  }
-
-  .titles {
-    align-content: center;
-    direction: column;
-    text-align: center;
+  @media (width <= 768px) {
+    width: 90%;
+    align-items: center;
+    margin: var(--spacing-5) 0 !important;
   }
 
   .searchContainer {
     display: flex;
-    max-width: 500px;
-    padding-inline: 16px;
     justify-content: center;
+    width: clamp(325px, 60%, 508px);
+    padding: var(--spacing-5) 0;
+
+    @media (width <= 768px) {
+      width: 100%;
+    }
   }
 
   .error {
@@ -31,5 +27,24 @@
     margin-top: 3px;
     text-align: left;
     width: 100%;
+  }
+}
+
+.text {
+  text-align: left;
+  width: 40%;
+  padding: var(--spacing-5) 0;
+
+  @media (width <= 768px) {
+    padding-bottom:  0;
+    width: 100%;
+  }
+
+  h1 {
+    margin-bottom: var(--spacing-7);
+
+    @media (width <= 768px) {
+      margin-bottom: 0;
+    }
   }
 }

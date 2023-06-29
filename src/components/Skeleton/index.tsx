@@ -1,78 +1,35 @@
 import React from "react";
-import { Box, Skeleton as SkeletonMUI } from "@mui/material";
-import { RepeatElement } from "@architecture-it/stylesystem/HOC/RepeatElement";
+import { Grid, Box, Skeleton as SkeletonMUI, useMediaQuery } from "@mui/material";
 
 import styles from "./index.module.scss";
 
 const Skeleton = () => {
+  const isMobile = useMediaQuery("(max-width:768px)");
+
   return (
-    <Box className={styles.skeleton}>
-      <Box
-        alignContent={"center"}
-        alignItems="center"
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
-      >
-        <SkeletonMUI
-          height={50}
-          sx={{ bgcolor: "grey.200", borderRadius: "8px" }}
-          variant="text"
-          width={125}
-        />
-        <SkeletonMUI
-          height={40}
-          sx={{ bgcolor: "grey.200", borderRadius: "8px" }}
-          variant="text"
-          width={225}
-        />
-        <SkeletonMUI
-          height={45}
-          sx={{ bgcolor: "grey.200", borderRadius: "8px", marginBlock: "16px", maxWidth: "485px" }}
-          variant="rectangular"
-          width="90%"
-        />
+    <Grid container item className={styles.skeleton}>
+      <Box className={styles.containerHeader}>
+        <SkeletonMUI className={styles.userSkeleton} variant="rectangular" />
+        <SkeletonMUI className={styles.skeletonSearch} variant="rectangular" />
       </Box>
-      <Box
-        alignContent={"center"}
-        alignItems="center"
-        display="flex"
-        flexDirection="column"
-        justifyContent="center"
-        padding="var(--spacing-4)"
-      >
-        <SkeletonMUI
-          height={50}
-          sx={{
-            bgcolor: "grey.200",
-            borderRadius: "8px",
-            alignSelf: "center",
-            width: { xs: "245px", sm: "300px" },
-            margin: { xs: "0 1%", sm: "0 5%" },
-          }}
-          variant={"text"}
-        />
-        <Box
-          className={styles.skeletonCards}
-          display="flex"
-          flexWrap="wrap"
-          padding="var(--spacing-4)"
-          width="100%"
-        >
-          <RepeatElement cant={2}>
-            <SkeletonMUI
-              sx={{
-                bgcolor: "grey.200",
-                borderRadius: "8px",
-                width: { xs: 100, sm: "45%" },
-                height: { xs: 100, sm: 200 },
-              }}
-              variant={"rectangular"}
-            />
-          </RepeatElement>
+      <Box className={styles.containerCard}>
+        {!isMobile && <SkeletonMUI className={styles.skeletonSubtitle} variant="rectangular" />}
+        <Box className={styles.containerButton}>
+          <SkeletonMUI className={styles.skeletonCard} variant="rectangular" />
+          <SkeletonMUI className={styles.skeletonCard} variant="rectangular" />
+        </Box>
+        <SkeletonMUI className={styles.skeletonBanner} variant="rectangular" />
+      </Box>
+      <Box className={styles.quickAccess}>
+        <SkeletonMUI className={styles.skeletonTitle} variant="rectangular" />
+
+        <Box className={styles.containerCards}>
+          <SkeletonMUI className={styles.skeletonCards} variant="rectangular" />
+          <SkeletonMUI className={styles.skeletonCards} variant="rectangular" />
+          <SkeletonMUI className={styles.skeletonCards} variant="rectangular" />
         </Box>
       </Box>
-    </Box>
+    </Grid>
   );
 };
 

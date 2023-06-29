@@ -1,0 +1,156 @@
+.container {
+  display: flex;
+  flex-direction: column !important;
+  justify-content: flex-start;
+  width: clamp(350px, 100%, 834px) !important;
+  min-height: 195px;
+  text-align: center;
+  padding-inline: var(--spacing-4);
+
+  :global(.MuiTypography-root) {
+    max-width: 100%;
+  }
+
+  section {
+    margin: var(--spacing-5) auto;
+
+    @media (width <= 768px) {
+      margin: var(--spacing-4) auto;
+      padding-inline: 0;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  padding: var(--spacing-3) 0;
+  margin-top: 0 !important;
+
+  h1 {
+    font-size: 18px;
+    color: var(--gray-700);
+    font-weight: 500;
+  }
+
+  @media (width <= 768px) {
+    flex-direction: column;
+    gap: var(--spacing-4);
+    align-items: center;
+  }
+
+  @media (width <= 425px) {
+    padding: var(--spacing-3) 0;
+  }
+}
+
+.text {
+  color: var(--gray-700);
+  font-size: var(--subtitle-2);
+}
+
+.address {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-4);
+  cursor: pointer;
+
+  & .icon {
+    color: var(--primary);
+
+    & .text {
+      color: var(--gray-700);
+      font-size: var(--subtitle-2);
+    }
+  }
+}
+
+.alertRoot {
+  height: 50px;
+  align-items: center;
+  background-color: #faf1e0 !important;
+
+  @media (width <= 768px) {
+    padding: var(--spacing-2);
+    height: 92px;
+    margin-top: 0;
+  }
+
+  :global(.MuiGrid-root) {
+    display: inline-flex;
+    align-items: center;
+
+    @media (width <= 768px) {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  :global(.MuiAlert-message) {
+    margin-left: auto;
+
+    @media (width <= 768px) {
+      margin-left: 0;
+    }
+  }
+}
+
+.update {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: var(--spacing-2);
+  color: orange;
+  font-weight: bolder;
+}
+
+.linkAlert {
+  text-decoration: underline;
+  font: normal normal 600 14px/24px Roboto, sans-serif;
+}
+
+.logOutButton {
+  padding-top: var(--spacing-2);
+  padding-left: var(--spacing-3);
+  position: absolute;
+  width: 140px;
+  height: 40px;
+  top: 60px;
+  cursor: pointer;
+
+  & > :hover {
+    color: var(--primary);
+  }
+}
+
+.iconCongrats,
+.iconLink {
+  width: 16px;
+  height: 16px;
+  padding: 8px;
+  border-radius: 8px;
+  opacity: 1;
+  color: white;
+}
+
+.iconCongrats {
+  background: #279e70 0% 0% no-repeat padding-box;
+}
+
+.iconLink {
+  background: #fd780d 0% 0% no-repeat padding-box;
+}
+
+.subtitle {
+  font-size: var(--body-1);
+  color: var(--gray-800);
+  font-weight: 500;
+  line-height: 3em;
+  text-align: left;
+}
