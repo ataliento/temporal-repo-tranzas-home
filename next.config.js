@@ -14,21 +14,35 @@ module.exports = async (_phase, { _defaultConfig }) => {
   const nextConfig = {
     reactStrictMode: true,
     webpack: (config, options) => {
-      const { isServer } = options;
-
       config.plugins.push(
         new NextFederationPlugin({
           name: "remote",
           filename: "static/chunks/remoteEntry.js",
-          remotes: {
-            pymes: `pymes@http://localhost:3000/_next/static/${isServer ? "ssr" : "chunks"}/remoteEntry.js`
-          },
-          extraOptions: {},
+          remotes: {},
+          // extraOptions: {
+          //   automaticAsyncBoundary: true,
+          // },
           exposes: {
             "./HomePage": "./src/pages/index",
             "./HomeSkeleton": "./src/components/Skeleton/index",
           },
-          shared: {},
+          shared: {
+            "react": {
+              eager: true,
+              requiredVersion: false,
+              singleton: true,
+            },
+            "@architecture-it/stylesystem": {
+              eager: true,
+              requiredVersion: false,
+              singleton: true,
+            },
+            "@mui/material": {
+              eager: true,
+              requiredVersion: false,
+              singleton: true,
+            },
+          },
         })
       );
       config.resolve.modules.push(path.resolve("./src"));
