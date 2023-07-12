@@ -6,6 +6,24 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
+const DEFAULT_SHARE_SCOPE = {
+  "react": {
+    eager: true,
+    requiredVersion: false,
+    singleton: true,
+  },
+  "@architecture-it/stylesystem": {
+    eager: true,
+    requiredVersion: false,
+    singleton: true,
+  },
+  "@mui/material": {
+    eager: true,
+    requiredVersion: false,
+    singleton: true,
+  },
+};
+
 /** @type {import('next').NextConfig} */
 module.exports = async (_phase, { _defaultConfig }) => {
   /**
@@ -13,6 +31,7 @@ module.exports = async (_phase, { _defaultConfig }) => {
    */
   const nextConfig = {
     reactStrictMode: true,
+    swcMinify: true,
     webpack: (config, options) => {
       config.plugins.push(
         new NextFederationPlugin({
@@ -26,29 +45,12 @@ module.exports = async (_phase, { _defaultConfig }) => {
             "./HomePage": "./src/pages/index",
             "./HomeSkeleton": "./src/components/Skeleton/index",
           },
-          shared: {
-            "react": {
-              eager: true,
-              requiredVersion: false,
-              singleton: true,
-            },
-            "@architecture-it/stylesystem": {
-              eager: true,
-              requiredVersion: false,
-              singleton: true,
-            },
-            "@mui/material": {
-              eager: true,
-              requiredVersion: false,
-              singleton: true,
-            },
-          },
+          shared: DEFAULT_SHARE_SCOPE,
         })
       );
       config.resolve.modules.push(path.resolve("./src"));
       return config;
     },
-    swcMinify: true,
     output: "standalone",
     images: {
       domains: ["componentesui.blob.core.windows.net"],
