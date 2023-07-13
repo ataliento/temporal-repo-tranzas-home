@@ -13,7 +13,7 @@
     @media only screen and (width <= 768px) {
       padding-inline: 0;
     }
-  
+
     .questionTitle {
       display: inline-block;
       max-width: 90%;
@@ -22,9 +22,9 @@
 }
 
 .titleContainer {
-   hr {
+  hr {
     margin-top: var(--spacing-4);
-  }  
+  }
 }
 
 .question {
@@ -34,7 +34,7 @@
 .dropdownBox {
   padding-inline: var(--spacing-4) !important;
 }
-  
+
 .answer {
   display: block;
   color: var(--gray-700);
@@ -42,7 +42,7 @@
   font-size: var(--body-3);
   width: 95%;
   text-align: left;
-  padding: var(--spacing-4); 
+  padding: var(--spacing-4);
   margin: 0;
   line-height: 24px;
 }

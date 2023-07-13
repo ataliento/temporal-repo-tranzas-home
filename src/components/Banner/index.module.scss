@@ -1,5 +1,5 @@
 .container {
-  display:flex;
+  display: flex;
   width: 100%;
   text-align: left;
   padding: var(--spacing-4) var(--spacing-5) 0 var(--spacing-5);
@@ -8,23 +8,23 @@
   border-radius: var(--border-radius-small);
   border: none;
 
-  @media screen and (width <= 768px){
+  @media screen and (width <= 768px) {
     flex-flow: column-reverse nowrap;
     text-align: center;
     align-items: center;
   }
 }
- 
+
 .title {
   font-size: var(--title-5);
   color: var(--primary);
-  font-family:Ubuntu, sans-serif;
-  text-align: left; 
+  font-family: Ubuntu, sans-serif;
+  text-align: left;
   padding-bottom: var(--spacing-3);
 
-  @media screen and (width <= 768px){
+  @media screen and (width <= 768px) {
     max-width: 90%;
-    text-align: center; 
+    text-align: center;
     font-size: var(--title-4);
   }
 }
@@ -40,7 +40,7 @@
 .description {
   max-width: 65%;
 
-  @media screen and (width <= 768px){
+  @media screen and (width <= 768px) {
     max-width: 90%;
   }
 }
@@ -50,5 +50,5 @@
 }
 
 .button {
-  margin-bottom: var(--spacing-3); 
+  margin-bottom: var(--spacing-3);
 }
