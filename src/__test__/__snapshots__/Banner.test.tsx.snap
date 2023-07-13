@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Banner/> Should render initial State without crash 1`] = `
+<DocumentFragment>
+  <section
+    class="MuiGrid-root MuiGrid-container css-11lq3yg-MuiGrid-root"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-item container css-13i4rnv-MuiGrid-root"
+    >
+      <div
+        class="description MuiBox-root css-0"
+      >
+        <h5
+          class="MuiTypography-root MuiTypography-h3 title css-gepadz-MuiTypography-root"
+        >
+          Andreani envíos
+        </h5>
+        <p
+          class="MuiTypography-root MuiTypography-body1 subtitle css-ahj2mt-MuiTypography-root"
+        >
+          Con Andreani envíos podrás enviar un link a tu destinatario para que complete sus datos y abone el envío.
+        </p>
+        <button
+          class="MuiButtonBase-root MuiButton-root StyleSystem__Button_root__959dd419 MuiButton-outlined StyleSystem__Button_outlined__959dd419 MuiButton-outlinedPrimary MuiButton-sizeSmall StyleSystem__Button_sizeSmall__959dd419 MuiButton-outlinedSizeSmall MuiButton-disableElevation MuiButton-root StyleSystem__Button_root__959dd419 MuiButton-outlined StyleSystem__Button_outlined__959dd419 MuiButton-outlinedPrimary MuiButton-sizeSmall StyleSystem__Button_sizeSmall__959dd419 MuiButton-outlinedSizeSmall MuiButton-disableElevation button css-11c7338-MuiButtonBase-root-MuiButton-root"
+          tabindex="0"
+          type="button"
+        >
+          <h6
+            class="MuiTypography-root MuiTypography-subtitle2 css-ati914-MuiTypography-root"
+          >
+            Ir al servicio
+          </h6>
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+      <div
+        class="image MuiBox-root css-0"
+      >
+        <img
+          alt="image-banner"
+          data-nimg="1"
+          decoding="async"
+          height="146"
+          loading="lazy"
+          src="https://componentesui.blob.core.windows.net/imgs/feed_pymes/banner_feed.png"
+          style="color: transparent;"
+          width="256"
+        />
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`<Banner/> Should render with title 1`] = `
+<h5
+  class="MuiTypography-root MuiTypography-h3 title css-gepadz-MuiTypography-root"
+>
+  Andreani envíos
+</h5>
+`;
